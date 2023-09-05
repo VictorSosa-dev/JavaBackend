@@ -1,0 +1,13 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'Reto2'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Reto2'
+    }
+}
