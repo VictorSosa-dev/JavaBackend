@@ -1,6 +1,8 @@
 import e1.Singleton;
 import e2.AnalyzeInformation;
 import e2.StockMarketAdapter;
+import e3.SaveCommand;
+import e3.TextEditor;
 import reto1.Motor;
 import reto1.MotorElectrico;
 import reto1.MotorElectricoAdapter;
@@ -30,10 +32,18 @@ public class Application {
         }
 
         System.out.println("");
-        System.out.println("--------E2--------");
+        System.out.println("--------r1--------");
         Motor motor = new MotorElectricoAdapter();
         motor.encender();
         motor.acelerar();
         motor.apagar();
+
+        System.out.println("");
+        System.out.println("--------E3--------");
+        TextEditor te = new TextEditor(new SaveCommand());
+        te.onPressSaveButton();
+        te.onPressSaveOption();
+        te.onShortcut();
+
     }
 }
