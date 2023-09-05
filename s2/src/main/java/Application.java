@@ -1,6 +1,9 @@
 import e1.Singleton;
 import e2.AnalyzeInformation;
 import e2.StockMarketAdapter;
+import reto1.Motor;
+import reto1.MotorElectrico;
+import reto1.MotorElectricoAdapter;
 
 public class Application {
 
@@ -25,5 +28,12 @@ public class Application {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.println("");
+        System.out.println("--------E2--------");
+        Motor motor = new MotorElectricoAdapter();
+        motor.encender();
+        motor.acelerar();
+        motor.apagar();
     }
 }
