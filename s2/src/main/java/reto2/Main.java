@@ -39,9 +39,11 @@ public class Main {
                     break;
                 case 2:
                     counter = multiplyBy2Command.execute(counter);
+                    stack.add(multiplyBy2Command);
                     break;
                 case 3:
                     counter = add10Command.execute(counter);
+                    stack.add(add10Command);
                     break;
                 case 4:
                     if (!stack.isEmpty()) {
