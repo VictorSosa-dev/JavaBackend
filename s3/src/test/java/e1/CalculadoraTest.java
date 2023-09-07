@@ -2,11 +2,12 @@ package e1;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import src.main.java.e1.Calculadora;
+import org.junit.platform.suite.api.Suite;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculadoraTest {
+
 
     private Calculadora calc = new Calculadora();
 
