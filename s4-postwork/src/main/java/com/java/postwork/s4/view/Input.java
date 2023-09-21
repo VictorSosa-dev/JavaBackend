@@ -1,4 +1,4 @@
-package com.java.postwork.s4.vista;
+package com.java.postwork.s4.view;
 
 import java.util.Scanner;
 
