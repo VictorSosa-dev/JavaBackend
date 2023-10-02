@@ -25,9 +25,6 @@ public class DiaryService {
 
     public Person savePerson(Person person) {
 
-        if (!checkNumber.isValid(person.getPhone())) {
-            return null;
-        }
         String phone = checkNumber.cleanNumber(person.getPhone());
 
         person.setPhone(phone);
@@ -36,8 +33,8 @@ public class DiaryService {
     }
 
 
-    public Set<Person> getPerson() {
-        return diaryMemoryDao.getPersonas();
+    public Set<Person> getPeople() {
+        return diaryMemoryDao.getPeople();
     }
 
 

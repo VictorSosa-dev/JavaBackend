@@ -17,8 +17,6 @@ public class AgendaController {
         this.diaryService = diaryService;
     }
 
-
-
     @PostMapping
     public ResponseEntity<Person> guardaPersona(@RequestBody Person person) {
         Person resultado = diaryService.savePerson(person);
@@ -34,6 +32,6 @@ public class AgendaController {
 
     @GetMapping
     public ResponseEntity<Set<Person>> getPersonas(){
-        return ResponseEntity.ok(diaryService.getPerson());
+        return ResponseEntity.ok(diaryService.getPeople());
     }
 }

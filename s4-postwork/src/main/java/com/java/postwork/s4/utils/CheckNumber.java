@@ -9,10 +9,6 @@ public class CheckNumber {
 
     private static final Pattern PATTERN_PHONE = Pattern.compile("^(\\d{2,4}[- .]?){2}\\d{4}$");
 
-    public boolean isValid(String phone) {
-        return PATTERN_PHONE.matcher(phone).matches();
-    }
-
     public String cleanNumber(String telefono) {
         return telefono.replaceAll("[^0-9]", "");
     }

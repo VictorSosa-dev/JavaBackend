@@ -1,16 +1,22 @@
 package com.java.postwork.s4.model;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 public class Person implements Comparable<Person> {
 
+    @NotBlank(message = "El nombre de la persona es un campo obligatorio.")
     private String name;
+    @Pattern(regexp = "^(\\d{2,4}[- .]?){2}\\d{4}$", message = "El teléfono debe tener un formato de ##-####-####")
     private String phone;
 
     public Person(String name, String phone) {
         this.name = name;
         this.phone = phone;
     }
+
+    public Person() {}
 
     public String getName() {
         return name;
