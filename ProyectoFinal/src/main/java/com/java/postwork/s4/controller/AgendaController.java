@@ -30,8 +30,9 @@ public class AgendaController {
         return ResponseEntity.ok(resultado);
     }
 
+    /*
     @GetMapping
     public ResponseEntity<Set<Person>> getPersonas(){
         return ResponseEntity.ok(diaryService.getPeople());
-    }
+    }*/
 }

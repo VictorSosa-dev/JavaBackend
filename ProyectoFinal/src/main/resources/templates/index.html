@@ -20,6 +20,10 @@
         <label for="phone">Telefono: </label>
         <input id="phone" type="text" th:field="*{phone}">
         <div th:if="${#fields.hasErrors('phone')}" th:errorclass="error" th:errors="*{phone}"></div>
+        <div th:if="${value}">
+            <p>Número ya registrado</p>
+        </div>
+
     </div>
     <input type="submit" th:value="Guardar"/>
 </form>

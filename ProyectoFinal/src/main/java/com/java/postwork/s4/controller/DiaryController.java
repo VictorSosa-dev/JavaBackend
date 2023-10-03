@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import com.java.postwork.s4.service.DiaryService;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,13 +31,21 @@ public class DiaryController {
     }
 
     @PostMapping("/register")
-    public ModelAndView register(@Valid Person person) {
+    public ModelAndView register(@Valid Person person, Errors errors) {
 
-        diaryService.savePerson(person);
+        ModelAndView mav = new ModelAndView("index");
 
-        ModelAndView modelAndView = new ModelAndView("index");
-        //modelAndView.addObject("person", new Person());
-        modelAndView.addObject("people", diaryService.getPeople());
-        return modelAndView;
+        if (!errors.hasErrors()) {
+            if (diaryService.getPeople().stream().filter(
+                    item -> person.getPhone().equals(item.getPhone())).findFirst().orElse(null) != null){
+
+                mav.addObject("value", true);
+            } else {
+                diaryService.savePerson(person);
+            }
+        }
+
+        mav.addObject("people", diaryService.getPeople());
+        return mav;
     }
 }
